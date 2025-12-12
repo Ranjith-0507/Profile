@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranjithkumar M | Portfolio</title>
+
+    <!-- GOOGLE FONTS -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- FONT AWESOME -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            background: #f7f7f7;
+            color: #222;
+        }
+
+        header {
+            background: #111;
+            padding: 15px 0;
+        }
+
+        .navbar {
+            width: 90%;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 32px;
+            color: white;
+            font-weight: 700;
+        }
+
+        .logo span {
+            color: #00eaff;
+        }
+
+        .nav-links li {
+            display: inline-block;
+            margin-left: 25px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 17px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #00eaff;
+        }
+
+        .home-section {
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 8%;
+            background: linear-gradient(to right, #070707, #1a1a1a);
+            color: white;
+        }
+
+        .home-content h1 {
+            font-size: 55px;
+        }
+
+        .home-img img {
+            width: 380px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
+            100% { transform: translateY(0); }
+        }
+
+        .btn {
+            margin-top: 20px;
+            display: inline-block;
+            padding: 12px 25px;
+            background: #00eaff;
+            color: #111;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .btn:hover{
+            background: #00c4d6;
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 38px;
+            margin-bottom: 25px;
+            margin-top: 60px;
+        }
+
+        /* SKILLS */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .skill-card {
+            background: #00eaff;
+            padding: 12px 20px;
+            border-radius: 8px;
+            color: #111;
+            font-weight: 600;
+            transition: all 0.35s ease;
+            cursor: pointer;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0px 8px 20px rgba(0, 234, 255, 0.4);
+        }
+
+        /* PROJECTS */
+        .projects-section {
+            padding: 50px 8%;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        .project-card {
+            background: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            transition: all 0.35s ease;
+            cursor: pointer;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.1);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+            border: 1px solid #00eaff;
+        }
+
+        /* SERVICES */
+        .services-section {
+            padding: 50px 8%;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .service-box {
+            width: 280px;
+            text-align: center;
+            background: #fff;
+            padding: 25px;
+            margin: 15px;
+            border-radius: 12px;
+            transition: 0.35s ease;
+            cursor: pointer;
+            box-shadow: 0px 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .service-box:hover {
+            transform: translateY(-12px) scale(1.03);
+            box-shadow: 0 12px 35px rgba(0, 234, 255, 0.25);
+            border: 1px solid #00eaff;
+        }
+
+        /* CONTACT */
+        .contact-section {
+            background: #111;
+            padding: 60px 8%;
+            color: white;
+            text-align: center;
+        }
+
+        .social-links a i {
+            font-size: 32px;
+            margin: 15px;
+            transition: 0.3s ease-in-out;
+            color: #00eaff;
+        }
+
+        #comment-section {
+            background: #fff;
+            padding: 50px 10%;
+            margin-top: 50px;
+        }
+
+        textarea, input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+        #comment-list {
+            margin-top: 25px;
+            padding: 20px;
+            background: #fafafa;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+
+        .comment-box {
+            background: #fff;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+            border: 1px solid #e3e3e3;
+        }
+
+        footer {
+            background: #000;
+            color: #aaa;
+            padding: 12px;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">Ranjith<span>Dev</span></div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#comment-section">Comments</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HOME -->
+    <section id="home" class="home-section">
+        <div class="home-content">
+            <h3>Hello, I am</h3>
+            <h1 class="typing">Ranjithkumar M</h1>
+            <p>A Frontend Developer skilled in  
+               <strong>HTML • CSS • JS • Python • Power BI</strong>.
+            </p>
+            <a href="#contact" class="btn">Hire Me</a>
+        </div>
+
+        <div class="home-img">
+            <img src="https://i.postimg.cc/5t8Cwq1S/portfolio-boy.png" alt="">
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="skills-section">
+        <h2 class="section-title">Skills</h2>
+
+        <div class="skills-container">
+            <div class="skill-card">HTML</div>
+            <div class="skill-card">CSS</div>
+            <div class="skill-card">JavaScript</div>
+            <div class="skill-card">Python</div>
+            <div class="skill-card">Power BI</div>
+            <div class="skill-card">Frontend Development</div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="projects-section">
+        <h2 class="section-title">Projects</h2>
+
+        <div class="project-grid">
+            <div class="project-card">
+                <h3>AI Voice Emotion Detector</h3>
+                <p>Real-time speech & facial emotion analysis using DeepFace & NLP.</p>
+            </div>
+
+            <div class="project-card">
+                <h3>Virtual Classroom Manager</h3>
+                <p>Frontend-only Virtual Classroom Management System.</p>
+            </div>
+
+            <div class="project-card">
+                <h3>EmoHeal Therapy Bot</h3>
+                <p>AI-powered therapy assistant using Streamlit & Google APIs.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="services-section">
+        <h2 class="section-title">Services</h2>
+
+        <div class="service-box">
+            <i class="fas fa-code"></i>
+            <h3>Web Development</h3>
+            <p>Fully responsive custom websites.</p>
+        </div>
+
+        <div class="service-box">
+            <i class="fas fa-chart-bar"></i>
+            <h3>Power BI Dashboards</h3>
+            <p>Interactive analytics dashboards.</p>
+        </div>
+
+        <div class="service-box">
+            <i class="fas fa-brain"></i>
+            <h3>AI Solutions</h3>
+            <p>AI automation using ML & NLP.</p>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact-section">
+        <h2 class="section-title">Contact Me</h2>
+
+        <p><strong>Mobile:</strong> +91 63853 40559</p>
+        <p><strong>Email:</strong> ranjithkumarmanickam05@gmail.com</p>
+
+        <div class="social-links">
+            <a href="https://www.instagram.com/_rxnjth_05?igsh=OTFlbjZ6cDY5ZGN6" target="_blank">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a href="https://www.linkedin.com/in/ranjithkumar-m-5765432a3/" target="_blank">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- COMMENT SECTION -->
+    <section id="comment-section">
+        <h2 class="section-title">Leave a Comment</h2>
+        <p>Your email address will not be published. Required fields are marked *</p>
+
+        <textarea id="commentText" placeholder="Type here.." rows="5"></textarea>
+        <br><br>
+
+        <input type="text" id="nameField" placeholder="Name*">
+        <br><br>
+        <input type="text" id="emailField" placeholder="Email*">
+        <br><br>
+        <input type="text" id="websiteField" placeholder="Website">
+
+        <br><br>
+        <button onclick="postComment()" class="btn">Post Comment</button>
+
+        <div id="comment-list"></div>
+    </section>
+
+    <footer>
+        © 2025 Ranjithkumar M | Portfolio
+    </footer>
+
+    <!-- HIDDEN EMAIL FORM -->
+    <form id="hiddenMailForm" action="https://api.web3forms.com/submit" method="POST" style="display:none;">
+        <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+        <input type="hidden" name="name" id="mail_name">
+        <input type="hidden" name="email" value="no-reply@portfolio.com">
+        <input type="hidden" name="message" id="mail_message">
+    </form>
+
+<script>
+    // TYPEWRITER EFFECT
+    let text = "Frontend Developer | Power BI Analyst | Python Programmer";
+    let index = 0;
+
+    function typeEffect() {
+        document.querySelector(".typing").innerHTML =
+            "Ranjithkumar M<br><span class='sub'>" + text.slice(0, index) + "</span>";
+        index++;
+        if (index <= text.length) setTimeout(typeEffect, 70);
+    }
+
+    window.onload = () => {
+        typeEffect();
+        loadComments();
+    };
+
+    // SMOOTH SCROLL
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href'))
+                .scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+
+    // POST COMMENT + EMAIL SEND
+    function postComment() {
+        let comment = document.getElementById("commentText").value;
+        let name = document.getElementById("nameField").value;
+
+        if (comment.trim() === "" || name.trim() === "") {
+            alert("Name & Comment are required!");
+            return;
+        }
+
+        let comments = JSON.parse(localStorage.getItem("comments")) || [];
+
+        comments.push({
+            name: name,
+            comment: comment,
+            time: new Date().toLocaleString()
+        });
+
+        localStorage.setItem("comments", JSON.stringify(comments));
+
+        loadComments();
+        document.getElementById("commentText").value = "";
+
+        // EMAIL SEND
+        document.getElementById("mail_name").value = name;
+        document.getElementById("mail_message").value =
+            `New Comment on Portfolio:\n\nName: ${name}\nComment: ${comment}\nTime: ${new Date().toLocaleString()}`;
+
+        const form = document.getElementById("hiddenMailForm");
+
+        fetch(form.action, {
+            method: "POST",
+            body: new FormData(form)
+        })
+        .then(() => alert("Comment posted & email sent ✔"))
+        .catch(() => alert("Comment posted but email failed ❌"));
+    }
+
+    // LOAD COMMENTS
+    function loadComments() {
+        let list = document.getElementById("comment-list");
+        list.innerHTML = "";
+
+        let comments = JSON.parse(localStorage.getItem("comments")) || [];
+
+        comments.forEach(c => {
+            let div = document.createElement("div");
+            div.className = "comment-box";
+            div.innerHTML = `<strong>${c.name}</strong><br>
+                             <p>${c.comment}</p>
+                             <small>${c.time}</small>`;
+            list.appendChild(div);
+        });
+    }
+</script>
+
+</body>
+</html>
