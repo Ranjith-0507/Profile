@@ -1,3 +1,4 @@
+steps --> insert - add - commit - push to main..
 git clone "link"
 git status 
 git add "file name"
