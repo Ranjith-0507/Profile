@@ -1,1 +1,1 @@
-hello!
+git pull--->its pull all the updated things in the github repsoitory to pull it on ur vs code git folder.
