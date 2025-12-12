@@ -1,1 +1,5 @@
-hi hello
+git clone "link"
+git status 
+git add "file name"
+git commit -m "file name added"
+git push origin main
