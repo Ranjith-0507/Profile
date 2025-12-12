@@ -3,3 +3,7 @@ git status
 git add "file name"
 git commit -m "file name added"
 git push origin main
+
+Modifying ur file :
+git add .
+git commit -m "updated name file"
